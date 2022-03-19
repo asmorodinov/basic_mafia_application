@@ -9,7 +9,7 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-EXPOSE 5000
+EXPOSE 5000 50051
 
 # run the command
-CMD ["python3", "./server-tcp.py"]
+CMD ["python3", "./mafia_server.py"]

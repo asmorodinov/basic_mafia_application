@@ -39,7 +39,8 @@ class MafiaClient:
             return
 
         # connect to room
-        resp = self.conn.ConnectToSpecificRoom(pb2.ConnectToRoomRequest(room='TestRoom'))
+        room_name = input('Enter room name: ')
+        resp = self.conn.ConnectToSpecificRoom(pb2.ConnectToRoomRequest(room=room_name))
         print(f"client received: {pb2.Result.Name(resp.result)} {resp.message}")
 
         self.voice_chat_client.logged_in = True
